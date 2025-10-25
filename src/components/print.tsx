@@ -2,29 +2,19 @@ import { useBatch } from "@/lib/batch";
 import type { PrintFormSchema } from "@/lib/types";
 import { StyleSheet, Document, View, Page, Text } from "@react-pdf/renderer";
 
-
-
 export const PrintDocument = ({ useCurrent }: { useCurrent: boolean }) => {
   const batch = useBatch();
 
   return (
     <Document>
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-      <PrintDocData p={batch.items[0]} />
-
-      {/* {
-        batch.items.map((batchEntry, idx) => (
+      {
+        useCurrent ? (
+            <PrintDocData p={batch.items[batch.currentItemInView]} />
+        ) : 
+        batch.items.map((p, idx) => (
+            <PrintDocData p={p} key={idx} />
         ))
-      } */}
+      }
     </Document>
   );
 };
