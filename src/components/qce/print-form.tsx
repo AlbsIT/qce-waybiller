@@ -14,38 +14,34 @@ import {
 } from "../ui/select";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
-import { useBatch } from "@/lib/batch";
+import { type Batch } from "@/lib/batch";
 import { useEffect } from "react";
 import { Field, FieldError, FieldGroup, FieldLabel } from "../ui/field";
 
 export const PrintForm = ({
-  id,
-  currForm,
+    batch
 }: {
-  id: number;
-  currForm: PrintFormSchema;
+    batch: Batch,
 }) => {
-  const batch = useBatch();
 
   const form = useForm<PrintFormSchema>({
     resolver: zodResolver(printFormSchema),
     defaultValues: {
-      ...currForm,
-      id,
+      id: batch.currentItemInView,
       shipperDateAssigned: new Date().toString(),
     },
   });
 
   useEffect(() => {
-    form.reset(currForm);
+    form.reset(batch.items[batch.currentItemInView]);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
+  }, [batch.currentItemInView]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === 's') {
         e.preventDefault();
-        saveForm();
+        saveForm(null);
       }
     }
 
@@ -56,16 +52,15 @@ export const PrintForm = ({
     }
   }, []);
 
-  const saveForm = () => {
-    const vals = form.getValues();
-    batch.saveForm(id, vals);
+  const saveForm = (formVal: PrintFormSchema | null) => {
+    const vals = formVal ?? form.getValues();
+    batch.saveForm(vals);
 
     // TODO notif for "successful save"
   };
 
   const onSubmit = (vals: PrintFormSchema) => {
-    console.log(vals);
-    batch.saveForm(id, vals);
+    saveForm(vals);
   };
 
   return (
@@ -78,7 +73,7 @@ export const PrintForm = ({
         name="id"
         control={form.control}
         render={({ field }) => (
-          <input hidden {...field} value={id || ""} readOnly />
+          <input hidden {...field} value={batch.currentItemInView || ""} readOnly />
         )}
       />
 

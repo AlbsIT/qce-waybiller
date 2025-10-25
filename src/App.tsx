@@ -20,10 +20,7 @@ function App() {
 
       <section className="self-stretch p-4">
         {batch.itemCount > 0 ? (
-          <PrintForm
-            id={batch.currentItemInView}
-            currForm={batch.items[batch.currentItemInView]}
-          />
+          <PrintForm batch={batch}/>
         ) : (
           <NoItemInBatch />
         )}

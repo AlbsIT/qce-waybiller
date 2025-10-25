@@ -12,7 +12,7 @@ export type Batch = {
   next: () => void;
   prev: () => void;
   remove: (i: number) => void;
-  saveForm: (id: number, form: PrintFormSchema) => void;
+  saveForm: (form: PrintFormSchema) => void;
 
   // creates empty
   new: () => void;
@@ -32,6 +32,7 @@ export const useBatch = create<Batch>((set) => ({
     set((x) => ({
       currentItemInView: clamp(x.currentItemInView - 1, 0, x.itemCount - 1),
     })),
+
   remove: (b) =>
     set((x) => {
       const newItems = x.items.filter((_, i) => i !== b);
@@ -42,13 +43,20 @@ export const useBatch = create<Batch>((set) => ({
         itemCount: newItems.length,
       };
     }),
-  saveForm: (id, form) =>
-    set((x) => {
-      x.items[id] = form;
+
+  saveForm: (form) => {
+    if (form.id == null) {
+      return;
+    }
+
+    return set((x) => {
+      x.items[form.id ?? 0] = form;
+
       return {
         items: x.items,
       };
-    }),
+    })
+  },
 
   new: () => {
     set((b) => ({
