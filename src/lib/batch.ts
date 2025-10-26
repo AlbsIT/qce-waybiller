@@ -50,10 +50,12 @@ export const useBatch = create<Batch>((set) => ({
     }
 
     return set((x) => {
-      x.items[form.id ?? 0] = form;
+      const newItems = [...x.items]
+      newItems[form.id ?? 0] = { ...form };
 
       return {
-        items: x.items,
+        items: newItems,
+        itemCount: newItems.length,
       };
     })
   },

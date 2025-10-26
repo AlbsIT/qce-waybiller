@@ -20,7 +20,7 @@ function App() {
 
       <section className="self-stretch p-4">
         {batch.itemCount > 0 ? (
-          <PrintForm batch={batch}/>
+          <PrintForm batch={batch} />
         ) : (
           <NoItemInBatch />
         )}
@@ -52,7 +52,7 @@ function App() {
           <BlobProvider document={<PrintDocument useCurrent={true} />}>
             {({ blob }) => (
               <Button className="w-full" onClick={() => printPdf(blob)}>
-                Print <Printer />
+                Print Current <Printer />
               </Button>
             )}
           </BlobProvider>
