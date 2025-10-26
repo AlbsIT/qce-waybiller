@@ -19,9 +19,9 @@ import { useEffect } from "react";
 import { Field, FieldError, FieldGroup, FieldLabel } from "../ui/field";
 
 export const PrintForm = ({
-    batch
+  batch
 }: {
-    batch: Batch,
+  batch: Batch,
 }) => {
 
   const form = useForm<PrintFormSchema>({
@@ -395,7 +395,7 @@ export const PrintForm = ({
         />
       </FieldGroup>
 
-      <Button type="submit" onClick={saveForm}>
+      <Button type="submit" onClick={() => saveForm(null)}>
         Save
       </Button>
     </form>
