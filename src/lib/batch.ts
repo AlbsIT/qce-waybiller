@@ -16,6 +16,8 @@ export type Batch = {
 
   // creates empty
   new: () => void;
+
+  replaceAll: (forms: PrintFormSchema[]) => void;
 };
 
 export const useBatch = create<Batch>((set) => ({
@@ -91,5 +93,13 @@ export const useBatch = create<Batch>((set) => ({
       itemCount: b.itemCount + 1,
       currentItemInView: b.itemCount,
     }));
+  },
+
+  replaceAll: (forms) => {
+    set(() => ({
+      items: forms,
+      itemCount: forms.length,
+      currentItemInView: 0
+    }))
   },
 }));

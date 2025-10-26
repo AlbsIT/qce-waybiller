@@ -4,6 +4,7 @@ import { useBatch } from "@/lib/batch";
 import { BlobProvider } from "@react-pdf/renderer";
 import { PrintDocument } from "../print";
 import { printPdf } from "@/lib/actions";
+import { BatchImport } from "./batch-import";
 
 export const Header = () => {
   const batch = useBatch();
@@ -55,7 +56,7 @@ export const Header = () => {
           <p>{batch.itemCount}</p>
         </div>
         <div className="border-l pl-5 space-x-1">
-          <Button variant="outline">Batch Import</Button>
+          <BatchImport />
           {batch.items.length > 0 && (
             <BlobProvider document={<PrintDocument useCurrent={false} />}>
               {({ blob }) => (
