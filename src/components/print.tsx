@@ -40,6 +40,7 @@ const PrintDocData = ({ p }: { p: PrintFormSchema }) => {
         <Text style={{ ...styles.text, top: "1.1in", left: "5.5in" }}>{p.consigneeContactNo}</Text>
         <Text style={{ ...styles.text, top: "1.1in", left: "3in" }}>{p.consigneeAddress}</Text>
         <Text style={{ ...styles.text, top: "1.8in", left: "3in" }}>{p.deliveryInstructions}</Text>
+        <Text style={{ ...styles.text, top: "3.21in", left: "1in" }}>{p.declaredValue}</Text>
       </View>
     </Page>
   );
