@@ -82,40 +82,40 @@ export const PrintForm = ({
         <h3 className="col-span-2">
           <Step num="1" /> Shipper Details
         </h3>
-        <Controller
-          name="shipperDateAssigned"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="shipperDateAssigned">
-                Date Assigned
-              </FieldLabel>
-              <Input
-                {...field}
-                id="shipperDateAssigned"
-                type="date"
-                aria-invalid={fieldState.invalid}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="shipperCode"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="shipperCode">Shipper Code</FieldLabel>
-              <Input
-                {...field}
-                id="shipperCode"
-                aria-invalid={fieldState.invalid}
-                placeholder="Enter shipper code"
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
+        {/* <Controller */}
+        {/*   name="shipperDateAssigned" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="shipperDateAssigned"> */}
+        {/*         Date Assigned */}
+        {/*       </FieldLabel> */}
+        {/*       <Input */}
+        {/*         {...field} */}
+        {/*         id="shipperDateAssigned" */}
+        {/*         type="date" */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
+        {/* <Controller */}
+        {/*   name="shipperCode" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="shipperCode">Shipper Code</FieldLabel> */}
+        {/*       <Input */}
+        {/*         {...field} */}
+        {/*         id="shipperCode" */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*         placeholder="Enter shipper code" */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
         <Controller
           name="shipperName"
           control={form.control}
@@ -205,25 +205,25 @@ export const PrintForm = ({
             </Field>
           )}
         />
-        <Controller
-          name="idPresented"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field
-              data-invalid={fieldState.invalid}
-              className="flex items-center gap-2"
-            >
-              <FieldLabel htmlFor="idPresented">ID Presented?</FieldLabel>
-              <Checkbox
-                id="idPresented"
-                checked={field.value}
-                onCheckedChange={field.onChange}
-                aria-invalid={fieldState.invalid}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
+        {/* <Controller */}
+        {/*   name="idPresented" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field */}
+        {/*       data-invalid={fieldState.invalid} */}
+        {/*       className="flex items-center gap-2" */}
+        {/*     > */}
+        {/*       <FieldLabel htmlFor="idPresented">ID Presented?</FieldLabel> */}
+        {/*       <Checkbox */}
+        {/*         id="idPresented" */}
+        {/*         checked={field.value} */}
+        {/*         onCheckedChange={field.onChange} */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
         <Controller
           name="consigneeAddress"
           control={form.control}
@@ -283,44 +283,44 @@ export const PrintForm = ({
             </Field>
           )}
         />
-        <Controller
-          name="modeOfPayment"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="modeOfPayment">Mode of Payment</FieldLabel>
-              <Select onValueChange={field.onChange} value={field.value}>
-                <SelectTrigger id="modeOfPayment" className="w-full">
-                  <SelectValue placeholder="Select payment mode" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="ewallet">EWallet/QR</SelectItem>
-                  <SelectItem value="cash">Cash</SelectItem>
-                </SelectContent>
-              </Select>
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="packagingType"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="packagingType">Packaging Type</FieldLabel>
-              <Select onValueChange={field.onChange} value={field.value}>
-                <SelectTrigger id="packagingType" className="w-full">
-                  <SelectValue placeholder="Select packaging type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="box">Box</SelectItem>
-                  <SelectItem value="envelope">Envelope</SelectItem>
-                </SelectContent>
-              </Select>
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
+        {/* <Controller */}
+        {/*   name="modeOfPayment" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="modeOfPayment">Mode of Payment</FieldLabel> */}
+        {/*       <Select onValueChange={field.onChange} value={field.value}> */}
+        {/*         <SelectTrigger id="modeOfPayment" className="w-full"> */}
+        {/*           <SelectValue placeholder="Select payment mode" /> */}
+        {/*         </SelectTrigger> */}
+        {/*         <SelectContent> */}
+        {/*           <SelectItem value="ewallet">EWallet/QR</SelectItem> */}
+        {/*           <SelectItem value="cash">Cash</SelectItem> */}
+        {/*         </SelectContent> */}
+        {/*       </Select> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
+        {/* <Controller */}
+        {/*   name="packagingType" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="packagingType">Packaging Type</FieldLabel> */}
+        {/*       <Select onValueChange={field.onChange} value={field.value}> */}
+        {/*         <SelectTrigger id="packagingType" className="w-full"> */}
+        {/*           <SelectValue placeholder="Select packaging type" /> */}
+        {/*         </SelectTrigger> */}
+        {/*         <SelectContent> */}
+        {/*           <SelectItem value="box">Box</SelectItem> */}
+        {/*           <SelectItem value="envelope">Envelope</SelectItem> */}
+        {/*         </SelectContent> */}
+        {/*       </Select> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
         <Controller
           name="declaredValue"
           control={form.control}
@@ -339,60 +339,60 @@ export const PrintForm = ({
             </Field>
           )}
         />
-        <Controller
-          name="totalCost"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="totalCost">Total Cost</FieldLabel>
-              <Input
-                {...field}
-                id="totalCost"
-                type="number"
-                aria-invalid={fieldState.invalid}
-                placeholder="Enter total cost"
-                onChange={(e) => field.onChange(Number(e.target.value))}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="totalWeight"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="totalWeight">Total Weight</FieldLabel>
-              <Input
-                {...field}
-                id="totalWeight"
-                type="number"
-                aria-invalid={fieldState.invalid}
-                placeholder="Enter total weight"
-                onChange={(e) => field.onChange(Number(e.target.value))}
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
-        <Controller
-          name="totalDimensions"
-          control={form.control}
-          render={({ field, fieldState }) => (
-            <Field data-invalid={fieldState.invalid}>
-              <FieldLabel htmlFor="totalDimensions">
-                Total Dimensions
-              </FieldLabel>
-              <Input
-                {...field}
-                id="totalDimensions"
-                aria-invalid={fieldState.invalid}
-                placeholder="Enter total dimensions"
-              />
-              {fieldState.invalid && <FieldError errors={[fieldState.error]} />}
-            </Field>
-          )}
-        />
+        {/* <Controller */}
+        {/*   name="totalCost" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="totalCost">Total Cost</FieldLabel> */}
+        {/*       <Input */}
+        {/*         {...field} */}
+        {/*         id="totalCost" */}
+        {/*         type="number" */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*         placeholder="Enter total cost" */}
+        {/*         onChange={(e) => field.onChange(Number(e.target.value))} */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
+        {/* <Controller */}
+        {/*   name="totalWeight" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="totalWeight">Total Weight</FieldLabel> */}
+        {/*       <Input */}
+        {/*         {...field} */}
+        {/*         id="totalWeight" */}
+        {/*         type="number" */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*         placeholder="Enter total weight" */}
+        {/*         onChange={(e) => field.onChange(Number(e.target.value))} */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
+        {/* <Controller */}
+        {/*   name="totalDimensions" */}
+        {/*   control={form.control} */}
+        {/*   render={({ field, fieldState }) => ( */}
+        {/*     <Field data-invalid={fieldState.invalid}> */}
+        {/*       <FieldLabel htmlFor="totalDimensions"> */}
+        {/*         Total Dimensions */}
+        {/*       </FieldLabel> */}
+        {/*       <Input */}
+        {/*         {...field} */}
+        {/*         id="totalDimensions" */}
+        {/*         aria-invalid={fieldState.invalid} */}
+        {/*         placeholder="Enter total dimensions" */}
+        {/*       /> */}
+        {/*       {fieldState.invalid && <FieldError errors={[fieldState.error]} />} */}
+        {/*     </Field> */}
+        {/*   )} */}
+        {/* /> */}
       </FieldGroup>
 
       <Button type="submit" onClick={() => saveForm(null)}>

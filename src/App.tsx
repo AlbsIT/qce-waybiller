@@ -60,7 +60,7 @@ function App() {
       </div>
 
       {batch.items.length > 0 && (
-        <PDFViewer>
+        <PDFViewer width={1000} height={1000}>
           <PrintDocument useCurrent={false} />
         </PDFViewer>
       )}

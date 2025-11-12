@@ -30,19 +30,16 @@ const styles = StyleSheet.create({
 
 const PrintDocData = ({ p }: { p: PrintFormSchema }) => {
   return (
-    <Page size={{ width: 467.72, height: 283.46 }}>
+    <Page size={{ width: "6.5in", height: "4in" }}>
       <View>
-        <Text style={{ ...styles.text, top: "2.15cm", left: "2.3cm" }}>{p.shipperName}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.shipperContactNo}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.shipperAddress}</Text>
-        <Text style={{ ...styles.text, top: "4.65cm", left: "1cm" }}>{p.parcelDescription}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.modeOfPayment}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.packagingType}</Text>
-        <Text style={{ ...styles.text, top: "2.15cm", left: "10cm" }}>{p.consigneeName}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.consigneeContactNo}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.consigneeAddress}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.idPresented}</Text>
-        <Text style={{ ...styles.text, top: 10 }}>{p.deliveryInstructions}</Text>
+        <Text style={{ ...styles.text, top: "0.9in", left: "0.8in" }}>{p.shipperName}</Text>
+        <Text style={{ ...styles.text, top: "1.1in", left: "2in" }}>{p.shipperContactNo}</Text>
+        <Text style={{ ...styles.text, top: "1.1in", left: "0.2in" }}>{p.shipperAddress}</Text>
+        <Text style={{ ...styles.text, top: "1.8in", left: "0.2in" }}>{p.parcelDescription}</Text>
+        <Text style={{ ...styles.text, top: "0.9in", left: "3.7in" }}>{p.consigneeName}</Text>
+        <Text style={{ ...styles.text, top: "1.1in", left: "5.5in" }}>{p.consigneeContactNo}</Text>
+        <Text style={{ ...styles.text, top: "1.1in", left: "3in" }}>{p.consigneeAddress}</Text>
+        <Text style={{ ...styles.text, top: "1.8in", left: "3in" }}>{p.deliveryInstructions}</Text>
       </View>
     </Page>
   );
