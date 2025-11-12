@@ -5,14 +5,6 @@ import { printFormSchema, type PrintFormSchema } from "@/lib/types";
 import { Controller, useForm } from "react-hook-form";
 import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../ui/select";
-import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
 import { type Batch } from "@/lib/batch";
 import { useEffect } from "react";
