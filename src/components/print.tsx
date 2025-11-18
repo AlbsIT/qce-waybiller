@@ -29,18 +29,20 @@ const styles = StyleSheet.create({
 })
 
 const PrintDocData = ({ p }: { p: PrintFormSchema }) => {
+  const date = new Date();
   return (
     <Page size={{ width: "6.5in", height: "4in" }}>
       <View>
+        <Text style={{ ...styles.text, top: "0.8in", left: "0.4in" }}>{date.toLocaleDateString()}</Text>
         <Text style={{ ...styles.text, top: "0.9in", left: "0.9in" }}>{p.shipperName}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "2.1in" }}>{p.shipperContactNo}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "0.4in" }}>{p.shipperAddress}</Text>
-        <Text style={{ ...styles.text, top: "1.8in", left: "0.4in" }}>{p.parcelDescription}</Text>
+        <Text style={{ ...styles.text, top: "1.9in", left: "0.4in" }}>{p.parcelDescription}</Text>
         <Text style={{ ...styles.text, top: "0.9in", left: "4.1in" }}>{p.consigneeName}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "5.5in" }}>{p.consigneeContactNo}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "3.3in" }}>{p.consigneeAddress}</Text>
-        <Text style={{ ...styles.text, top: "2in", left: "3in" }}>{p.deliveryInstructions}</Text>
-        <Text style={{ ...styles.text, top: "3.5in", left: "2.2in" }}>{p.declaredValue}</Text>
+        <Text style={{ ...styles.text, top: "1.9in", left: "3.3in" }}>{p.deliveryInstructions}</Text>
+        <Text style={{ ...styles.text, top: "3.1in", left: "0.5in" }}>{p.declaredValue}</Text>
       </View>
     </Page>
   );
