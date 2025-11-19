@@ -33,7 +33,7 @@ const PrintDocData = ({ p }: { p: PrintFormSchema }) => {
   return (
     <Page size={{ width: "6.5in", height: "4in" }}>
       <View>
-        <Text style={{ ...styles.text, top: "0.6in", left: "0.45in" }}>{date.toLocaleDateString()}</Text>
+        <Text style={{ ...styles.text, top: "0.65in", left: "0.47in" }}>{date.toLocaleDateString()}</Text>
         <Text style={{ ...styles.text, top: "0.9in", left: "0.9in" }}>{p.shipperName}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "2.1in" }}>{p.shipperContactNo}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "0.4in" }}>{p.shipperAddress}</Text>
@@ -42,7 +42,7 @@ const PrintDocData = ({ p }: { p: PrintFormSchema }) => {
         <Text style={{ ...styles.text, top: "1.2in", left: "5.5in" }}>{p.consigneeContactNo}</Text>
         <Text style={{ ...styles.text, top: "1.2in", left: "3.3in" }}>{p.consigneeAddress}</Text>
         <Text style={{ ...styles.text, top: "1.9in", left: "3.3in" }}>{p.deliveryInstructions}</Text>
-        <Text style={{ ...styles.text, top: "3.3in", left: "1in" }}>{p.declaredValue}</Text>
+        <Text style={{ ...styles.text, top: "3.3in", left: "1.2in" }}>{p.declaredValue}</Text>
       </View>
     </Page>
   );
